@@ -1,0 +1,2 @@
+# Predictive-Pulse-Harnessing-Machine-Learning-for-Blood-Pressure-Analysis
+Hypertension Prediction is an advanced machine learning project designed to predict and classify various hypertension stages in patients based on clinical parameters and lifestyle factors. The system utilizes supervised learning algorithms to analyze health data and provide accurate predictions along with personalized medical recommendations.
