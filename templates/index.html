@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hypertension Prediction</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hypertension Detection</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="#">Predict</a>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <div class="intro-card">
+            <h2>Features</h2>
+            <ul>
+                <li>Clean, professional medical interface</li>
+                <li>Comprehensive patient assessment form</li>
+                <li>Real-time validation feedback</li>
+                <li>Medical-grade security implementation</li>
+            </ul>
+        </div>
+        <div class="intro-card">
+            <h2>Patient Data Input</h2>
+            <ul>
+                <li>Demographics (Gender, Age Group)</li>
+                <li>Medical History (family history, current treatment)</li>
+                <li>Symptom Assessment (breath shortness, visual changes, nose bleeding)</li>
+                <li>Blood Pressure Readings (systolic, diastolic ranges)</li>
+                <li>Lifestyle Factors (diet, medication adherence)</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="main-content">
+        <div class="form-column">
+            <h2>Comprehensive Health Assessment</h2>
+            <form method="post">
+                <!-- form fields matching preprocessing logic -->
+                <label>Gender:
+                    <select name="Gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </label><br>
+                <label>Age Group:
+                    <select name="Age">
+                        <option>18-34</option>
+                        <option>35-50</option>
+                        <option>51-64</option>
+                        <option>65+</option>
+                    </select>
+                </label><br>
+                <label>Severity:
+                    <select name="Severity">
+                        <option>Mild</option>
+                        <option>Moderate</option>
+                        <option>Severe</option>
+                    </select>
+                </label><br>
+                <label>Take Medication:
+                    <select name="TakeMedication">
+                        <option>No</option>
+                        <option>Yes</option>
+                    </select>
+                </label><br>
+                <label>History of Hypertension:
+                    <select name="History">
+                        <option>No</option>
+                        <option>Yes</option>
+                    </select>
+                </label><br>
+                <label>Patient has Hypertension:
+                    <select name="Patient">
+                        <option>No</option>
+                        <option>Yes</option>
+                    </select>
+                </label><br>
+                <label>Breath Shortness:
+                    <select name="BreathShortness">
+                        <option>No</option>
+                        <option>Yes</option>
+                    </select>
+                </label><br>
+                <label>Visual Changes:
+                    <select name="VisualChanges">
+                        <option>No</option>
+                        <option>Yes</option>
+                    </select>
+                </label><br>
+                <label>Nose Bleeding:
+                    <select name="NoseBleeding">
+                        <option>No</option>
+                        <option>Yes</option>
+                    </select>
+                </label><br>
+                <label>Controlled Diet:
+                    <select name="ControlledDiet">
+                        <option>No</option>
+                        <option>Yes</option>
+                    </select>
+                </label><br>
+                <label>When Diagnosed:
+                    <select name="WhenDiagnosed">
+                        <option>&lt;1 Year</option>
+                        <option>1 - 5 Years</option>
+                        <option>&gt;5 Years</option>
+                    </select>
+                </label><br>
+                <label>Systolic Range:
+                    <select name="Systolic">
+                        <option>100+</option>
+                        <option>100 - 110</option>
+                        <option>111 - 120</option>
+                        <option>121 - 130</option>
+                        <option>130+</option>
+                    </select>
+                </label><br>
+                <label>Diastolic Range:
+                    <select name="Diastolic">
+                        <option>70 - 80</option>
+                        <option>81 - 90</option>
+                        <option>91 - 100</option>
+                        <option>100+</option>
+                    </select>
+                </label><br>
+                <button type="submit">Predict</button>
+            </form>
+        </div>
+        <div class="result-column">
+            <h2>Assessment Result</h2>
+            {% if prediction %}
+                <div class="result-box {{ risk_class }}">
+                    <h3>{{ prediction }}</h3>
+                    <p><strong>Status:</strong> {{ risk }}</p>
+                    <hr style="border-top: 1px solid rgba(255,255,255,0.3);">
+                    <p><strong>Recommendation:</strong> {{ advice }}</p>
+                </div>
+            {% else %}
+                <p>Complete the health assessment to see your risk level.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <hr>
+    <h2>Health Data Analytics</h2>
+    <div class="viz-dashboard">
+        <div class="viz-card">
+            <h4>Blood Pressure Distribution</h4>
+            <img src="{{ url_for('static', filename='stages_distribution.png') }}">
+        </div>
+        <div class="viz-card">
+            <h4>Systolic vs Diastolic Correlation</h4>
+            <img src="{{ url_for('static', filename='corr_systolic_diastolic.png') }}">
+        </div>
+        <div class="viz-card">
+            <h4>Age-Related Risk Factors</h4>
+            <img src="{{ url_for('static', filename='age_vs_stages.png') }}">
+        </div>
+        <div class="viz-card">
+            <h4>Medication Impact</h4>
+            <img src="{{ url_for('static', filename='takeMedication_vs_severity.png') }}">
+        </div>
+    </div>
+    {% if prediction is not none %}
+        <h2>Predicted Stage: {{ prediction }}</h2>
+        {% if risk %}
+            <p>Risk Level: {{ risk }}</p>
+        {% endif %}
+    {% endif %}
+
+</body>
+</html>

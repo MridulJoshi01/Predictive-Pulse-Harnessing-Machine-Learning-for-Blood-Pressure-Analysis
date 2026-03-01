@@ -1,0 +1,241 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+}
+
+header {
+    background: #004d99;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    display: inline-block;
+}
+
+header nav {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.main-content {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+.form-column, .result-column {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.form-column form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.result-column p {
+    margin: 8px 0;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+img {
+    display: block;
+    margin: 10px 0;
+}
+
+/* intro section cards */
+.intro {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.intro-card {
+    flex: 1;
+    background: #ffffffcc;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.intro-card h2 {
+    margin-top: 0;
+}
+
+/* risk outcome colors */
+.risk-output.low {
+    background: #d4edda;
+    border-left: 4px solid #28a745;
+    padding: 10px;
+}
+.risk-output.moderate {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 10px;
+}
+.risk-output.high {
+    background: #f8d7da;
+    border-left: 4px solid #dc3545;
+    padding: 10px;
+}
+.risk-output.critical {
+    background: #f5c6cb;
+    border-left: 4px solid #721c24;
+    padding: 10px;
+}
+
+/* overall background gradient */
+body {
+    background: linear-gradient(135deg, #004d99 0%, #66a3ff 100%);
+    color: #333;
+}
+
+/* adjust cards on blue background */
+.form-column, .result-column {
+    background: #fff;
+}
+
+/* Result Box & Animations */
+.result-box {
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.low { background-color: #28a745; }
+.moderate { background-color: #ffc107; color: #333; }
+.high { background-color: #fd7e14; }
+.critical { 
+    background-color: #dc3545; 
+    animation: pulse-red 2s infinite; 
+}
+
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(220, 53, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+/* Visualization Dashboard Grid */
+.viz-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.viz-card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+.viz-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* new design system variables and layout improvements */
+:root {
+    --primary: #0056b3;
+    --secondary: #6c757d;
+    --bg-light: #f4f7f6;
+    --card-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: var(--bg-light);
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #004d99 0%, #007bff 100%);
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.form-column, .result-column {
+    flex: 1;
+    min-width: 350px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+}
+
+/* Result Styling */
+.result-box {
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+.low { background-color: #28a745; }
+.moderate { background-color: #ffc107; color: #333; }
+.high { background-color: #fd7e14; }
+.critical { background-color: #dc3545; animation: pulse 2s infinite; }
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Dashboard Grid */
+.viz-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.viz-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+}
+
+.viz-card img {
+    width: 100%;
+    border-radius: 5px;
+}
