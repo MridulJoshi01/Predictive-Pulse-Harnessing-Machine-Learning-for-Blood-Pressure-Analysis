@@ -199,6 +199,200 @@ header {
     box-shadow: var(--card-shadow);
 }
 
+/* layout container */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* header adjustments */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header nav a {
+    margin: 0 1rem;
+    font-weight: 500;
+}
+
+/* form control styles */
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.form-control span {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+.form-control select,
+.form-control input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+.form-control select:focus,
+.form-control input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/* button */
+.btn-primary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-primary:hover {
+    background-color: #004080;
+}
+
+/* adjust intro and analytics spacing */
+.intro {
+    flex-wrap: wrap;
+}
+.analytics {
+    padding: 2rem 0;
+}
+
+/* prediction text styling */
+.prediction-text {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+.risk-text {
+    font-size: 1rem;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* header extras */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.header-buttons button {
+    margin-left: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: default;
+}
+
+/* assessment layout */
+.assessment-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.assessment-card {
+    flex: 2;
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.info-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.info-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.info-box h3 {
+    margin-top: 0;
+}
+
+.bp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+.bp-table td {
+    padding: 0.4rem 0.6rem;
+}
+.bp-table tr:nth-child(odd) {
+    background: #f7f7f7;
+}
+
+/* form grid inside assessment card */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem 2rem;
+}
+
+/* risk alert styling */
+.risk-alert {
+    border-left: 6px solid #dc3545;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+    background: #ffe5e5;
+    border-radius: 8px;
+}
+.risk-alert.low {border-color: #28a745; background: #e6f9e6;}
+.risk-alert.moderate {border-color: #ffc107; background: #fff8e1;}
+.risk-alert.high {border-color: #fd7e14; background: #fff4e6;}
+.risk-alert.critical {border-color: #dc3545; background: #ffe5e5;}
+
+.alert-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.alert-icon { font-size: 1.2rem; }
+.alert-title { font-weight: 700; font-size: 1.1rem; }
+.alert-status { margin: 0.5rem 0; }
+.alert-recommendations { margin: 0; padding-left: 1.2rem; }
+
+/* adjust primary button larger */
+.btn-primary {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+
+
 /* Result Styling */
 .result-box {
     padding: 20px;
